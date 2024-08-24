@@ -1,0 +1,39 @@
+@if (!results) {
+<p class="center">Please enter some values</p>
+
+}
+@else {
+
+<table>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Investment Value</th>
+            <th>Interest (Year)</th>
+            <th>Total Interest</th>
+            <th>Invested Capital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (i of results; track i.year) {
+        <tr>
+            <td>
+                {{i.year}}
+            </td>
+            <td>
+                {{i.valueEndOfYear | currency}}
+            </td>
+            <td>
+                {{i.interest | currency}}
+            </td>
+            <td>
+                {{i.totalInterest | currency}}
+            </td>
+            <td>
+                {{i.totalAmountInvested}}
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+}
